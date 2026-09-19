@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GameFarm Service - สั่งบริการและตรวจสอบคำสั่งซื้อก่อนยืนยัน">
+  <title>สั่งบริการ | GameFarm Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/order.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <div class="announcement" role="banner">
+    <div class="container announcement-inner">
+      <span class="announcement-icon" aria-hidden="true">📣</span>
+      <p><strong>GameFarm Service</strong> — โครงงานเพื่อการศึกษา ระบบคำสั่งซื้อเป็นการจำลอง ไม่มีการชำระเงินจริง</p>
+      <a href="services.html">กลับไปเลือกบริการ <span>→</span></a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="GameFarm Service หน้าแรก">
+        <span class="brand-mark" aria-hidden="true">🎮</span>
+        <span class="brand-text"><strong>GameFarm</strong><small>Service</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="เมนูหลัก">
+        <a class="nav-link" href="../index.html">หน้าแรก</a>
+        <a class="nav-link" href="games.html">เกมทั้งหมด</a>
+        <a class="nav-link" href="services.html">บริการ</a>
+        <a class="nav-link active" href="order.html">สั่งบริการ</a>
+        <a class="nav-link" href="status.html">สถานะงาน</a>
+        <a class="nav-link" href="host.html">Host</a>
+      </nav>
+      <div class="nav-actions">
+        <label class="search-box" for="siteSearch">
+          <span aria-hidden="true">⌕</span>
+          <input id="siteSearch" type="search" placeholder="ค้นหาเกมหรือบริการ..." autocomplete="off">
+        </label>
+        <a class="login-btn" href="login.html">เข้าสู่ระบบ</a>
+        <a class="register-btn" href="register.html">สมัครสมาชิก</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="order-hero">
+      <div class="container order-hero-card">
+        <img src="../assets/hero-banner.png" alt="ภาพ GameFarm Service" class="order-hero-art">
+        <div class="order-hero-overlay"></div>
+        <div class="order-hero-copy">
+          <span class="section-kicker">🛒 ORDER CENTER</span>
+          <h1>สั่งบริการแบบเป็นขั้นตอน</h1>
+          <p>ข้อมูลจากหน้า Games และ Services จะถูกนำมาแสดงที่นี่ เพื่อให้ตรวจสอบก่อนยืนยันคำสั่งซื้อ</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section order-section">
+      <div class="container">
+        <div class="order-progress" aria-label="ขั้นตอนการสั่งบริการ">
+          <div class="progress-step active" data-step-indicator="1"><span>1</span><strong>เลือกบริการ</strong><small>เกม • บริการ • แพ็กเกจ</small></div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step-indicator="2"><span>2</span><strong>กรอกข้อมูล</strong><small>รายละเอียดคำสั่งซื้อ</small></div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step-indicator="3"><span>3</span><strong>ตรวจสอบ</strong><small>เช็กข้อมูลก่อนยืนยัน</small></div>
+        </div>
+
+        <form id="orderForm" novalidate>
+          <section class="order-step-panel active" data-step="1" aria-labelledby="stepOneTitle">
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">STEP 01</span>
+                <h2 id="stepOneTitle">เลือกเกม บริการ และแพ็กเกจ</h2>
+                <p>ระบบจะพยายามใช้ข้อมูลที่คุณเลือกไว้จากหน้า Services ให้อัตโนมัติ</p>
+              </div>
+              <div class="saved-selection" id="savedSelection" hidden>✓ โหลดจากหน้า Services แล้ว</div>
+            </div>
+
+            <div class="order-grid three-col">
+              <label class="field-card" for="gameSelect">
+                <span>เกม <b>*</b></span>
+                <select id="gameSelect" name="game" required>
+                  <option value="">— เลือกเกม —</option>
+                  <option value="Roblox">Roblox</option>
+                  <option value="Minecraft">Minecraft</option>
+                  <option value="Genshin Impact">Genshin Impact</option>
+                  <option value="Mobile Legends">Mobile Legends</option>
+                </select>
+              </label>
+
+              <label class="field-card" for="serviceSelect">
+                <span>บริการ <b>*</b></span>
+                <select id="serviceSelect" name="service" required disabled>
+                  <option value="">— เลือกเกมก่อน —</option>
+                </select>
+              </label>
+
+              <label class="field-card" for="packageSelect">
+                <span>แพ็กเกจ <b>*</b></span>
+                <select id="packageSelect" name="package" required disabled>
+                  <option value="">— เลือกบริการก่อน —</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="package-preview" id="packagePreview" hidden>
+              <div class="package-preview-icon">🎁</div>
+              <div>
+                <small>แพ็กเกจที่เลือก</small>
+                <strong id="packagePreviewName">-</strong>
+                <span id="packagePreviewDescription">-</span>
+              </div>
+              <div class="package-price"><small>ราคา</small><strong id="packagePreviewPrice">0 บาท</strong></div>
+            </div>
+
+            <div class="step-actions">
+              <a class="btn btn-ghost" href="services.html">← กลับไปเลือกบริการ</a>
+              <button class="btn btn-primary" type="button" id="nextToInfo">ถัดไป →</button>
+            </div>
+          </section>
+
+          <section class="order-step-panel" data-step="2" aria-labelledby="stepTwoTitle" hidden>
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">STEP 02</span>
+                <h2 id="stepTwoTitle">กรอกข้อมูลคำสั่งซื้อ</h2>
+                <p>ใช้ข้อมูลตัวอย่างสำหรับโครงงานเท่านั้น ไม่ต้องใช้รหัสผ่านบัญชีเกม</p>
+              </div>
+            </div>
+
+            <div class="security-note">
+              <span aria-hidden="true">🔒</span>
+              <div><strong>ไม่ควรกรอกรหัสผ่านบัญชีเกม</strong><p>ระบบนี้เป็นการจำลองเพื่อการศึกษาและไม่มีการเชื่อมต่อบัญชีเกมจริง</p></div>
+            </div>
+
+            <div class="order-grid two-col">
+              <label class="field-card" for="playerName"><span>ชื่อในเกม / Display Name <b>*</b></span><input id="playerName" name="playerName" type="text" maxlength="60" autocomplete="off" placeholder="เช่น GameFarmPlayer" required></label>
+              <label class="field-card" for="gameUserId"><span>User ID / Player ID <b>*</b></span><input id="gameUserId" name="gameUserId" type="text" maxlength="40" autocomplete="off" placeholder="เช่น 123456789" required></label>
+              <label class="field-card" for="contact"><span>ช่องทางติดต่อ <b>*</b></span><input id="contact" name="contact" type="text" maxlength="80" autocomplete="off" placeholder="เช่น Discord / Line" required></label>
+              <label class="field-card" for="preferredTime"><span>ช่วงเวลาที่ต้องการ <small>(ไม่บังคับ)</small></span><select id="preferredTime" name="preferredTime"><option value="">ไม่ระบุ</option><option value="ช่วงเช้า">ช่วงเช้า</option><option value="ช่วงบ่าย">ช่วงบ่าย</option><option value="ช่วงเย็น">ช่วงเย็น</option><option value="ช่วงกลางคืน">ช่วงกลางคืน</option></select></label>
+              <label class="field-card full-span" for="orderDetails"><span>รายละเอียดเพิ่มเติม <small>(ไม่บังคับ)</small></span><textarea id="orderDetails" name="orderDetails" maxlength="500" rows="5" placeholder="เช่น เป้าหมายเลเวล, จำนวนเงิน/ไอเทม หรือรายละเอียดของงานจำลอง"></textarea></label>
+            </div>
+
+            <div class="step-actions">
+              <button class="btn btn-ghost" type="button" id="backToSelection">← ย้อนกลับ</button>
+              <button class="btn btn-primary" type="button" id="nextToReview">ตรวจสอบคำสั่งซื้อ →</button>
+            </div>
+          </section>
+
+          <section class="order-step-panel" data-step="3" aria-labelledby="stepThreeTitle" hidden>
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">STEP 03</span>
+                <h2 id="stepThreeTitle">ตรวจสอบคำสั่งซื้อ</h2>
+                <p>ตรวจสอบข้อมูลให้เรียบร้อยก่อนสร้างเลขคำสั่งซื้อจำลอง</p>
+              </div>
+            </div>
+
+            <div class="review-layout">
+              <div class="review-card">
+                <div class="review-card-head"><span>รายละเอียดบริการ</span><button type="button" class="edit-link" id="editSelection">แก้ไข</button></div>
+                <dl>
+                  <div><dt>เกม</dt><dd id="reviewGame">-</dd></div>
+                  <div><dt>บริการ</dt><dd id="reviewService">-</dd></div>
+                  <div><dt>แพ็กเกจ</dt><dd id="reviewPackage">-</dd></div>
+                  <div><dt>ช่วงเวลา</dt><dd id="reviewTime">ไม่ระบุ</dd></div>
+                </dl>
+              </div>
+              <div class="review-card">
+                <div class="review-card-head"><span>ข้อมูลผู้สั่ง</span><button type="button" class="edit-link" id="editInfo">แก้ไข</button></div>
+                <dl>
+                  <div><dt>ชื่อในเกม</dt><dd id="reviewPlayer">-</dd></div>
+                  <div><dt>User ID</dt><dd id="reviewUserId">-</dd></div>
+                  <div><dt>ติดต่อ</dt><dd id="reviewContact">-</dd></div>
+                  <div><dt>รายละเอียด</dt><dd id="reviewDetails">ไม่ระบุ</dd></div>
+                </dl>
+              </div>
+            </div>
+
+            <div class="order-total">
+              <div><span>ยอดรวมคำสั่งซื้อ</span><small>ระบบจำลอง ไม่มีการชำระเงินจริง</small></div>
+              <strong id="reviewPrice">0 บาท</strong>
+            </div>
+
+            <label class="confirm-check"><input id="confirmEducation" type="checkbox" required><span>ฉันเข้าใจว่าเว็บไซต์นี้เป็นโครงงานเพื่อการศึกษา และคำสั่งซื้อนี้เป็นข้อมูลจำลอง ไม่มีการรับเงินจริง</span></label>
+
+            <div class="step-actions">
+              <button class="btn btn-ghost" type="button" id="backToInfo">← ย้อนกลับ</button>
+              <button class="btn btn-primary" type="submit" id="confirmOrder">ยืนยันคำสั่งซื้อ</button>
+            </div>
+          </section>
+        </form>
+
+        <section class="success-panel" id="successPanel" hidden aria-live="polite">
+          <div class="success-icon">✓</div>
+          <span class="section-kicker">ORDER CREATED</span>
+          <h2>สร้างคำสั่งซื้อสำเร็จ</h2>
+          <p>ระบบจำลองได้สร้างเลขคำสั่งซื้อให้แล้ว สามารถนำเลขนี้ไปตรวจสอบที่หน้าสถานะงานได้</p>
+          <div class="order-number-box"><small>Order ID</small><strong id="createdOrderId">GF-10001</strong><button type="button" id="copyOrderId" class="small-btn">คัดลอก</button></div>
+          <div class="success-actions"><a class="btn btn-primary" id="goToStatus" href="status.html">ไปดูสถานะงาน</a><a class="btn btn-ghost" href="services.html">กลับไปเลือกบริการ</a></div>
+          <p class="success-note">สถานะเริ่มต้น: <strong class="status-pill process">PROCESS</strong></p>
+        </section>
+
+        <div class="education-note order-note">
+          <div class="note-icon" aria-hidden="true">🎓</div>
+          <div><strong>ขอบเขตของโครงงาน</strong><p>ข้อมูลคำสั่งซื้อจะถูกเก็บไว้ใน Local Storage ของเบราว์เซอร์เครื่องนี้เพื่อจำลองการทำงานเท่านั้น ระบบยังไม่มีฐานข้อมูลออนไลน์และไม่มีการชำระเงินจริง</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand-footer" href="../index.html"><span class="brand-mark" aria-hidden="true">🎮</span><span class="brand-text"><strong>GameFarm</strong><small>Service</small></span></a>
+          <p>เว็บไซต์โครงงานเพื่อการศึกษา จำลองระบบร้านบริการเกมตั้งแต่เลือกเกมจนถึงติดตามสถานะงาน</p>
+        </div>
+        <div><h3>เมนูหลัก</h3><a href="../index.html">หน้าแรก</a><a href="games.html">เกมทั้งหมด</a><a href="services.html">บริการ</a></div>
+        <div><h3>ระบบ</h3><a href="order.html">สั่งบริการ</a><a href="status.html">สถานะงาน</a><a href="host.html">Host Panel</a></div>
+        <div><h3>บัญชี</h3><a href="login.html">เข้าสู่ระบบ</a><a href="register.html">สมัครสมาชิก</a></div>
+        <div class="footer-card"><img src="../assets/promo-strip.png" alt="GameFarm Service"><div><strong>GameFarm Service</strong><span>Educational demo website</span></div></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GameFarm Service — Education Project</span><span>Mock service only • No real payments</span></div>
+    </div>
+  </footer>
+
+  <button class="floating-help" type="button" aria-label="คำแนะนำ" id="helpButton">?</button>
+  <script src="../js/main.js"></script>
+  <script src="../js/order.js"></script>
+</body>
+</html>

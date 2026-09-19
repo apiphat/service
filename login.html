@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เข้าสู่ระบบ | GameFarm Service</title>
+  <meta name="description" content="เข้าสู่ระบบ GameFarm Service ระบบจำลองสำหรับโครงงานการศึกษา">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+  <div class="announcement"><div class="container announcement-inner"><span>🔐</span><p><strong>GameFarm Service</strong> — ระบบบัญชีเป็นระบบจำลองเพื่อการศึกษา</p><a href="../index.html">กลับหน้าแรก →</a></div></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html"><span class="brand-mark">🎮</span><span class="brand-text"><strong>GameFarm</strong><small>Service</small></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="เมนูหลัก">
+        <a class="nav-link" href="../index.html">หน้าแรก</a><a class="nav-link" href="games.html">เกมทั้งหมด</a><a class="nav-link" href="services.html">บริการ</a><a class="nav-link" href="order.html">สั่งบริการ</a><a class="nav-link" href="status.html">สถานะงาน</a><a class="nav-link" href="host.html">Host</a>
+      </nav>
+      <div class="nav-actions"><a class="login-btn" href="login.html">เข้าสู่ระบบ</a><a class="register-btn" href="register.html">สมัครสมาชิก</a></div>
+    </div>
+  </header>
+  <main class="auth-page">
+    <div class="auth-layout">
+      <section class="auth-visual">
+        <img src="../assets/hero-banner.png" alt="GameFarm Service">
+        <div class="auth-visual-content">
+          <span class="eyebrow">GAMEFARM ACCOUNT</span>
+          <h1>เข้าสู่ระบบ<br>เพื่อไปต่อ</h1>
+          <p>ระบบบัญชีนี้จัดทำเพื่อจำลองการทำงานของเว็บไซต์โครงงานเท่านั้น ข้อมูลจะถูกเก็บไว้ใน Local Storage ของเบราว์เซอร์เครื่องนี้</p>
+          <div class="auth-chips"><span class="auth-chip">🎮 Game Service</span><span class="auth-chip">🧪 Education Demo</span><span class="auth-chip">🔒 Local Only</span></div>
+        </div>
+      </section>
+      <section class="auth-card">
+        <span class="section-kicker">WELCOME BACK</span>
+        <h2>เข้าสู่ระบบ</h2>
+        <p>ใช้บัญชีจำลองที่คุณสมัครไว้ในเครื่องนี้</p>
+        <div class="auth-error" id="authError"></div>
+        <div class="auth-success" id="authSuccess"></div>
+        <form class="auth-form" id="loginForm" novalidate>
+          <div class="auth-field"><label for="loginUsername">Username</label><input id="loginUsername" type="text" required autocomplete="username" placeholder="เช่น gamer123"></div>
+          <div class="auth-field"><label for="loginPassword">Password</label><input id="loginPassword" type="password" required autocomplete="current-password" placeholder="กรอกรหัสผ่าน"></div>
+          <button class="auth-submit" type="submit">เข้าสู่ระบบ</button>
+        </form>
+        <div class="auth-meta"><span>ยังไม่มีบัญชี?</span><a href="register.html">สมัครสมาชิก</a></div>
+        <div class="auth-divider">หรือ</div>
+        <div class="auth-note">หมายเหตุ: นี่เป็นระบบจำลองเพื่อการศึกษา ไม่ใช่ระบบบัญชีออนไลน์จริง</div>
+      </section>
+    </div>
+  </main>
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

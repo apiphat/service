@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Host Dashboard | GameFarm Service</title>
+  <meta name="description" content="แผงควบคุม Host สำหรับจัดการสถานะคำสั่งซื้อ GameFarm Service">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/host.css">
+</head>
+<body>
+  <div class="announcement">🛠️ GameFarm Service — Host Dashboard เป็นระบบจำลองเพื่อการศึกษา</div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="GameFarm Service หน้าแรก">
+        <span class="brand-mark">🎮</span>
+        <span class="brand-text"><strong>GameFarm</strong><small>Service</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="เมนูหลัก">
+        <a class="nav-link" href="../index.html">หน้าแรก</a>
+        <a class="nav-link" href="games.html">เกมทั้งหมด</a>
+        <a class="nav-link" href="services.html">บริการ</a>
+        <a class="nav-link" href="order.html">สั่งบริการ</a>
+        <a class="nav-link" href="status.html">สถานะงาน</a>
+        <a class="nav-link active" href="host.html">Host</a>
+      </nav>
+      <div class="nav-actions">
+        <label class="search-box" for="siteSearch">
+          <span aria-hidden="true">⌕</span>
+          <input id="siteSearch" type="search" placeholder="ค้นหาเกมหรือบริการ..." autocomplete="off">
+        </label>
+        <a class="login-btn" href="login.html">เข้าสู่ระบบ</a>
+        <a class="register-btn" href="register.html">สมัครสมาชิก</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="host-hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow">HOST DASHBOARD</span>
+          <h1>จัดการสถานะคำสั่งซื้อ</h1>
+          <p>เปลี่ยนสถานะของคำสั่งซื้อในระบบจำลอง แล้วตรวจสอบผลได้ที่หน้า Status</p>
+        </div>
+        <div class="demo-note">
+          <span class="demo-icon">🧪</span>
+          <div>
+            <strong>โครงงานเพื่อการศึกษา</strong>
+            <small>ข้อมูลเก็บด้วย Local Storage ของเบราว์เซอร์เครื่องนี้เท่านั้น</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="host-section">
+      <div class="container">
+        <div class="dashboard-stats" id="dashboardStats">
+          <div class="stat-card"><span>คำสั่งซื้อทั้งหมด</span><strong id="totalCount">0</strong></div>
+          <div class="stat-card stat-process"><span>Process</span><strong id="processCount">0</strong></div>
+          <div class="stat-card stat-success"><span>Succeed</span><strong id="successCount">0</strong></div>
+          <div class="stat-card stat-failed"><span>Unsuccessful</span><strong id="failedCount">0</strong></div>
+        </div>
+
+        <div class="toolbar-card">
+          <div>
+            <span class="card-kicker">ORDER MANAGEMENT</span>
+            <h2>รายการคำสั่งซื้อ</h2>
+            <p>เลือกสถานะใหม่จากรายการด้านล่าง แล้วกดบันทึก</p>
+          </div>
+          <div class="toolbar-actions">
+            <button type="button" class="btn btn-ghost" id="refreshBtn">↻ รีเฟรช</button>
+            <a class="btn btn-primary" href="status.html">ดูหน้า Status</a>
+          </div>
+        </div>
+
+        <div class="orders-panel">
+          <div class="panel-head">
+            <div class="panel-search">
+              <span>⌕</span>
+              <input id="hostSearch" type="search" placeholder="ค้นหา Order ID / เกม / บริการ" autocomplete="off">
+            </div>
+            <select id="statusFilter" class="filter-select" aria-label="กรองตามสถานะ">
+              <option value="All">ทุกสถานะ</option>
+              <option value="Process">Process</option>
+              <option value="Succeed">Succeed</option>
+              <option value="Unsuccessful">Unsuccessful</option>
+            </select>
+          </div>
+
+          <div id="orderList" class="order-list"></div>
+
+          <div id="hostEmpty" class="host-empty" hidden>
+            <div class="empty-icon">📭</div>
+            <h3>ยังไม่มีคำสั่งซื้อ</h3>
+            <p>ไปที่หน้า Order แล้วสร้างคำสั่งซื้อจำลอง 1 รายการก่อนครับ</p>
+            <a class="btn btn-primary" href="order.html">ไปหน้า Order</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>GameFarm Service</strong><p>โครงงานเว็บไซต์บริการเกมสำหรับการศึกษา</p></div>
+      <div><a href="../index.html">หน้าแรก</a><a href="games.html">เกมทั้งหมด</a><a href="services.html">บริการ</a><a href="order.html">สั่งบริการ</a><a href="status.html">สถานะงาน</a><a href="login.html">เข้าสู่ระบบ</a><a href="register.html">สมัครสมาชิก</a></div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="../js/main.js"></script>
+  <script src="../js/host.js"></script>
+</body>
+</html>

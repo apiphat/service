@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GameFarm Service - เกมทั้งหมดที่ให้บริการในโครงงานการศึกษา">
+  <title>เกมทั้งหมด | GameFarm Service</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/games.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <div class="announcement" role="banner">
+    <div class="container announcement-inner">
+      <span class="announcement-icon" aria-hidden="true">📣</span>
+      <p><strong>ยินดีต้อนรับสู่ GameFarm Service</strong> — เว็บไซต์โครงงานเพื่อการศึกษา บริการจำลอง ไม่มีการชำระเงินจริง</p>
+      <a href="../index.html#how-to-order">ดูวิธีใช้บริการ <span>→</span></a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="GameFarm Service หน้าแรก">
+        <span class="brand-mark" aria-hidden="true">🎮</span>
+        <span class="brand-text"><strong>GameFarm</strong><small>Service</small></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false">☰</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="เมนูหลัก">
+        <a class="nav-link" href="../index.html">หน้าแรก</a>
+        <a class="nav-link active" href="games.html">เกมทั้งหมด</a>
+        <a class="nav-link" href="services.html">บริการ</a>
+        <a class="nav-link" href="order.html">สั่งบริการ</a>
+        <a class="nav-link" href="status.html">สถานะงาน</a>
+        <a class="nav-link" href="host.html">Host</a>
+      </nav>
+
+      <div class="nav-actions">
+        <label class="search-box" for="siteSearch">
+          <span aria-hidden="true">⌕</span>
+          <input id="siteSearch" type="search" placeholder="ค้นหาเกมหรือบริการ..." autocomplete="off">
+        </label>
+        <a class="login-btn" href="login.html">เข้าสู่ระบบ</a>
+        <a class="register-btn" href="register.html">สมัครสมาชิก</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="games-hero">
+      <div class="container">
+        <div class="games-hero-card">
+          <div class="games-hero-copy">
+            <span class="section-kicker">🎮 GAME LIBRARY</span>
+            <h1>เกมทั้งหมดที่<br><span>GameFarm Service</span> รองรับ</h1>
+            <p>เลือกเกมที่ต้องการ แล้วดูประเภทบริการที่เหมาะกับเกมนั้น ๆ ได้จากหน้า Services ในขั้นตอนถัดไป</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#gameList">เลือกเกม <span>↓</span></a>
+              <a class="btn btn-ghost" href="../index.html">กลับหน้าแรก</a>
+            </div>
+          </div>
+          <img class="games-hero-art" src="../assets/hero-banner.png" alt="ภาพบรรยากาศ GameFarm Service">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gameList" aria-labelledby="gamesTitle">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">GAME LIST</span>
+            <h2 id="gamesTitle">เลือกเกมที่ต้องการใช้บริการ</h2>
+            <p>ตอนนี้มี 4 เกมสำหรับโครงงานตัวอย่าง และจะค่อย ๆ เชื่อมกับหน้าบริการในขั้นต่อไป</p>
+          </div>
+        </div>
+
+        <div class="game-filter-row">
+          <label class="filter-search" for="gameSearch">
+            <span aria-hidden="true">⌕</span>
+            <input id="gameSearch" type="search" placeholder="ค้นหา เช่น Roblox, Minecraft..." autocomplete="off">
+          </label>
+          <span class="filter-count" id="gameCount">พบ 4 เกม</span>
+        </div>
+
+        <div class="game-grid games-page-grid" id="gamesGrid">
+          <article class="game-card games-page-card searchable game-item" data-search="roblox ฟาร์มเลเวล ฟาร์มเงิน ฟาร์มไอเทม ทำภารกิจ">
+            <div class="game-media"><img src="../assets/game-roblox.png" alt="Roblox"></div>
+            <div class="game-body">
+              <div class="game-title-row">
+                <h3>Roblox</h3>
+                <span class="game-status">เปิดบริการ</span>
+              </div>
+              <p class="game-description">บริการตัวอย่างสำหรับการฟาร์มเลเวล เงิน ไอเทม และภารกิจ</p>
+              <div class="tag-row"><span>Level</span><span>Money</span><span>Item</span><span>Mission</span></div>
+              <button class="card-btn choose-game" type="button" data-game="Roblox">เลือก Roblox</button>
+            </div>
+          </article>
+
+          <article class="game-card games-page-card searchable game-item" data-search="minecraft resource build mission ฟาร์มทรัพยากร สร้างสิ่งปลูกสร้าง">
+            <div class="game-media"><img src="../assets/game-minecraft.png" alt="Minecraft"></div>
+            <div class="game-body">
+              <div class="game-title-row">
+                <h3>Minecraft</h3>
+                <span class="game-status">เปิดบริการ</span>
+              </div>
+              <p class="game-description">บริการตัวอย่างสำหรับทรัพยากร การสร้าง และภารกิจภายในเกม</p>
+              <div class="tag-row"><span>Resource</span><span>Build</span><span>Mission</span></div>
+              <button class="card-btn choose-game" type="button" data-game="Minecraft">เลือก Minecraft</button>
+            </div>
+          </article>
+
+          <article class="game-card games-page-card searchable game-item" data-search="genshin impact item mission farming ฟาร์มไอเทม วัตถุดิบ ภารกิจ">
+            <div class="game-media"><img src="../assets/game-genshin.png" alt="Genshin Impact"></div>
+            <div class="game-body">
+              <div class="game-title-row">
+                <h3>Genshin Impact</h3>
+                <span class="game-status">เปิดบริการ</span>
+              </div>
+              <p class="game-description">บริการตัวอย่างสำหรับฟาร์มไอเทม วัตถุดิบ และภารกิจ</p>
+              <div class="tag-row"><span>Item</span><span>Mission</span><span>Farming</span></div>
+              <button class="card-btn choose-game" type="button" data-game="Genshin Impact">เลือก Genshin</button>
+            </div>
+          </article>
+
+          <article class="game-card games-page-card searchable game-item" data-search="mobile legends mlbb mission farming item ฟาร์มภารกิจ ไอเทม">
+            <div class="game-media"><img src="../assets/game-mlbb.png" alt="Mobile Legends"></div>
+            <div class="game-body">
+              <div class="game-title-row">
+                <h3>Mobile Legends</h3>
+                <span class="game-status">เปิดบริการ</span>
+              </div>
+              <p class="game-description">บริการตัวอย่างสำหรับภารกิจ การฟาร์ม และไอเทมตามแพ็กเกจ</p>
+              <div class="tag-row"><span>Mission</span><span>Farming</span><span>Item</span></div>
+              <button class="card-btn choose-game" type="button" data-game="Mobile Legends">เลือก Mobile Legends</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="search-empty" id="searchEmpty" hidden>ไม่พบเกมที่ตรงกับคำค้นหา ลองพิมพ์ชื่อเกมใหม่อีกครั้งครับ</p>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">NEXT STEP</span>
+            <h2>หลังจากเลือกเกมแล้วจะไปไหน?</h2>
+            <p>เราจะใช้เกมที่คุณเลือกเป็นข้อมูลตั้งต้นให้หน้า Services ในขั้นต่อไป</p>
+          </div>
+        </div>
+
+        <div class="game-flow-grid">
+          <article class="flow-card"><span>01</span><strong>เลือกเกม</strong><small>เช่น Roblox หรือ Minecraft</small></article>
+          <article class="flow-card"><span>02</span><strong>เลือกบริการ</strong><small>เช่น ฟาร์มเลเวลหรือฟาร์มไอเทม</small></article>
+          <article class="flow-card"><span>03</span><strong>เลือกแพ็กเกจ</strong><small>ดูรายละเอียดและราคาจำลอง</small></article>
+          <article class="flow-card"><span>04</span><strong>สั่งบริการ</strong><small>กรอกข้อมูลแล้วตรวจสอบรายการ</small></article>
+        </div>
+
+        <div class="education-note games-note">
+          <div class="note-icon" aria-hidden="true">🎓</div>
+          <div>
+            <strong>หมายเหตุสำหรับโครงงาน</strong>
+            <p>เว็บไซต์นี้สร้างขึ้นเพื่อการศึกษา ระบบบริการและคำสั่งซื้อเป็นการจำลอง ไม่มีการรับชำระเงินจริง และจะไม่เชื่อมต่อบัญชีเกมจริง</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand-footer" href="../index.html">
+            <span class="brand-mark" aria-hidden="true">🎮</span>
+            <span class="brand-text"><strong>GameFarm</strong><small>Service</small></span>
+          </a>
+          <p>เว็บไซต์โครงงานเพื่อการศึกษา จำลองระบบร้านบริการเกมตั้งแต่เลือกเกมจนถึงติดตามสถานะงาน</p>
+        </div>
+        <div>
+          <h3>เมนูหลัก</h3>
+          <a href="../index.html">หน้าแรก</a>
+          <a href="games.html">เกมทั้งหมด</a>
+          <a href="services.html">บริการ</a>
+        </div>
+        <div>
+          <h3>บริการของเรา</h3>
+          <a href="services.html?service=ฟาร์มเลเวล">ฟาร์มเลเวล</a>
+          <a href="services.html?service=ฟาร์มเงิน">ฟาร์มเงิน</a>
+          <a href="services.html?service=ฟาร์มไอเทม">ฟาร์มไอเทม</a>
+          <a href="services.html?service=ทำภารกิจ">ทำภารกิจ</a>
+        </div>
+        <div>
+          <h3>ระบบ</h3>
+          <a href="order.html">สั่งบริการ</a>
+          <a href="status.html">สถานะงาน</a>
+          <a href="host.html">Host Panel</a>
+        </div>
+        <div class="footer-card">
+          <img src="../assets/promo-strip.png" alt="GameFarm Service">
+          <div>
+            <strong>GameFarm Service</strong>
+            <span>เว็บไซต์จำลองสำหรับการเรียนรู้การพัฒนาเว็บ</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GameFarm Service. All rights reserved.</span>
+        <span>โครงงานเพื่อการศึกษา | ไม่มีการชำระเงินจริง</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    (() => {
+      const input = document.getElementById('gameSearch');
+      const items = [...document.querySelectorAll('.game-item')];
+      const empty = document.getElementById('searchEmpty');
+      const count = document.getElementById('gameCount');
+      const toast = document.getElementById('toast');
+
+      const update = () => {
+        const query = (input.value || '').trim().toLowerCase();
+        let visible = 0;
+
+        items.forEach(item => {
+          const text = (item.dataset.search || '').toLowerCase();
+          const match = !query || text.includes(query);
+          item.hidden = !match;
+          if (match) visible += 1;
+        });
+
+        count.textContent = `พบ ${visible} เกม`;
+        empty.hidden = visible !== 0;
+      };
+
+      input.addEventListener('input', update);
+
+      document.querySelectorAll('.choose-game').forEach(button => {
+        button.addEventListener('click', () => {
+          const game = button.dataset.game || '';
+          if (!game) return;
+          localStorage.setItem('gfSelectedGame', game);
+          localStorage.removeItem('gfSelectedService');
+          window.location.href = 'services.html';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

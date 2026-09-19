@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สมัครสมาชิก | GameFarm Service</title>
+  <meta name="description" content="สมัครสมาชิก GameFarm Service ระบบจำลองสำหรับโครงงานการศึกษา">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+  <div class="announcement"><div class="container announcement-inner"><span>📝</span><p><strong>GameFarm Service</strong> — สมัครสมาชิกเป็นระบบจำลองเพื่อการศึกษา</p><a href="../index.html">กลับหน้าแรก →</a></div></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html"><span class="brand-mark">🎮</span><span class="brand-text"><strong>GameFarm</strong><small>Service</small></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="เมนูหลัก">
+        <a class="nav-link" href="../index.html">หน้าแรก</a><a class="nav-link" href="games.html">เกมทั้งหมด</a><a class="nav-link" href="services.html">บริการ</a><a class="nav-link" href="order.html">สั่งบริการ</a><a class="nav-link" href="status.html">สถานะงาน</a><a class="nav-link" href="host.html">Host</a>
+      </nav>
+      <div class="nav-actions"><a class="login-btn" href="login.html">เข้าสู่ระบบ</a><a class="register-btn" href="register.html">สมัครสมาชิก</a></div>
+    </div>
+  </header>
+  <main class="auth-page">
+    <div class="auth-layout">
+      <section class="auth-card">
+        <span class="section-kicker">CREATE ACCOUNT</span>
+        <h2>สมัครสมาชิก</h2>
+        <p>สร้างบัญชีจำลองเพื่อทดลองใช้งานเว็บไซต์</p>
+        <div class="auth-error" id="authError"></div>
+        <div class="auth-success" id="authSuccess"></div>
+        <form class="auth-form" id="registerForm" novalidate>
+          <div class="auth-field"><label for="registerUsername">Username</label><input id="registerUsername" type="text" required minlength="3" autocomplete="username" placeholder="เช่น gamer123"></div>
+          <div class="auth-field"><label for="registerEmail">Email</label><input id="registerEmail" type="email" required autocomplete="email" placeholder="you@example.com"></div>
+          <div class="auth-field"><label for="registerPassword">Password</label><input id="registerPassword" type="password" required minlength="6" autocomplete="new-password" placeholder="อย่างน้อย 6 ตัวอักษร"></div>
+          <div class="auth-field"><label for="registerConfirm">ยืนยัน Password</label><input id="registerConfirm" type="password" required minlength="6" autocomplete="new-password" placeholder="กรอกรหัสผ่านอีกครั้ง"></div>
+          <button class="auth-submit" type="submit">สมัครสมาชิก</button>
+        </form>
+        <div class="auth-meta"><span>มีบัญชีอยู่แล้ว?</span><a href="login.html">เข้าสู่ระบบ</a></div>
+        <div class="auth-note">ข้อมูลจะถูกเก็บด้วย Local Storage บนอุปกรณ์นี้เท่านั้น ไม่มีการส่งข้อมูลไปเซิร์ฟเวอร์จริง</div>
+      </section>
+      <section class="auth-visual">
+        <img src="../assets/hero-banner.png" alt="GameFarm Service">
+        <div class="auth-visual-content">
+          <span class="eyebrow">JOIN GAMEFARM</span>
+          <h1>เริ่มต้นใช้งาน<br>เว็บไซต์ได้เลย</h1>
+          <p>หลังสมัครสมาชิก คุณสามารถกลับไปเลือกเกม บริการ และสร้างคำสั่งซื้อจำลองได้เหมือนขั้นตอนของร้านเกมจริง</p>
+          <div class="auth-chips"><span class="auth-chip">🎮 4 Games</span><span class="auth-chip">📦 Mock Orders</span><span class="auth-chip">🕒 Track Status</span></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

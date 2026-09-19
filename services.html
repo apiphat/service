@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GameFarm Service - เลือกบริการและแพ็กเกจสำหรับเกมที่รองรับ">
+  <title>บริการ | GameFarm Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/services.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <div class="announcement" role="banner">
+    <div class="container announcement-inner">
+      <span class="announcement-icon" aria-hidden="true">📣</span>
+      <p><strong>GameFarm Service</strong> — โครงงานเพื่อการศึกษา ระบบบริการเป็นการจำลอง ไม่มีการชำระเงินจริง</p>
+      <a href="../index.html#how-to-order">วิธีใช้บริการ <span>→</span></a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="GameFarm Service หน้าแรก">
+        <span class="brand-mark" aria-hidden="true">🎮</span>
+        <span class="brand-text"><strong>GameFarm</strong><small>Service</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="เมนูหลัก">
+        <a class="nav-link" href="../index.html">หน้าแรก</a>
+        <a class="nav-link" href="games.html">เกมทั้งหมด</a>
+        <a class="nav-link active" href="services.html">บริการ</a>
+        <a class="nav-link" href="order.html">สั่งบริการ</a>
+        <a class="nav-link" href="status.html">สถานะงาน</a>
+        <a class="nav-link" href="host.html">Host</a>
+      </nav>
+      <div class="nav-actions">
+        <label class="search-box" for="siteSearch">
+          <span aria-hidden="true">⌕</span>
+          <input id="siteSearch" type="search" placeholder="ค้นหาเกมหรือบริการ..." autocomplete="off">
+        </label>
+        <a class="login-btn" href="login.html">เข้าสู่ระบบ</a>
+        <a class="register-btn" href="register.html">สมัครสมาชิก</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="services-hero">
+      <div class="container services-hero-card">
+        <div class="services-hero-copy">
+          <span class="section-kicker">✨ SERVICE CENTER</span>
+          <h1>เลือกบริการที่ต้องการ<br><span>แล้วไปต่อที่แพ็กเกจ</span></h1>
+          <p>หน้านี้รวมบริการตัวอย่างของทุกเกมในโครงงาน คุณสามารถกรองตามเกมและประเภทบริการได้</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#serviceList">ดูบริการ <span>↓</span></a>
+            <a class="btn btn-ghost" href="games.html">เปลี่ยนเกม</a>
+          </div>
+        </div>
+        <img class="services-hero-art" src="../assets/hero-banner.png" alt="GameFarm Service gaming banner">
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="serviceTitle">
+      <div class="container" id="serviceList">
+        <div class="section-heading service-heading">
+          <div>
+            <span class="section-kicker">SERVICE LIST</span>
+            <h2 id="serviceTitle">บริการและแพ็กเกจ</h2>
+            <p>เลือกเกมจากตัวกรองด้านล่างเพื่อดูบริการที่เกี่ยวข้อง</p>
+          </div>
+          <div class="selected-game" id="selectedGameBox" hidden>
+            <span>เกมที่เลือก</span>
+            <strong id="selectedGameLabel">ทุกเกม</strong>
+            <button type="button" id="clearSelectedGame" aria-label="ล้างเกมที่เลือก">×</button>
+          </div>
+        </div>
+
+        <div class="service-toolbar">
+          <div class="service-tabs" id="gameTabs" role="tablist" aria-label="ตัวกรองเกม">
+            <button class="service-tab active" type="button" data-game-filter="all">ทั้งหมด</button>
+            <button class="service-tab" type="button" data-game-filter="Roblox">Roblox</button>
+            <button class="service-tab" type="button" data-game-filter="Minecraft">Minecraft</button>
+            <button class="service-tab" type="button" data-game-filter="Genshin Impact">Genshin</button>
+            <button class="service-tab" type="button" data-game-filter="Mobile Legends">MLBB</button>
+          </div>
+          <label class="filter-search" for="serviceSearch">
+            <span aria-hidden="true">⌕</span>
+            <input id="serviceSearch" type="search" placeholder="ค้นหาบริการ เช่น ฟาร์มเลเวล..." autocomplete="off">
+          </label>
+        </div>
+
+        <div class="service-grid" id="serviceGrid">
+          <article class="service-card searchable-service" data-game="Roblox" data-search="roblox ฟาร์มเลเวล level">
+            <div class="service-media"><img src="../assets/service-level.png" alt="บริการฟาร์มเลเวล"></div>
+            <div class="service-body">
+              <div class="service-meta"><span>Roblox</span><b>LEVEL</b></div>
+              <h3>ฟาร์มเลเวล</h3>
+              <p>เก็บเลเวลตามช่วงที่เลือก พร้อมระบุเป้าหมายในรายละเอียดคำสั่งซื้อ</p>
+              <div class="package-mini"><span>เริ่มต้น</span><strong>49 บาท</strong></div>
+              <button class="card-btn choose-service" type="button" data-game="Roblox" data-service="ฟาร์มเลเวล">เลือกบริการ</button>
+            </div>
+          </article>
+
+          <article class="service-card searchable-service" data-game="Roblox" data-search="roblox ฟาร์มเงิน money coins">
+            <div class="service-media"><img src="../assets/service-money.png" alt="บริการฟาร์มเงิน"></div>
+            <div class="service-body">
+              <div class="service-meta"><span>Roblox</span><b>MONEY</b></div>
+              <h3>ฟาร์มเงิน</h3>
+              <p>เลือกเป้าหมายเงินหรือจำนวนรอบที่ต้องการในแพ็กเกจจำลอง</p>
+              <div class="package-mini"><span>เริ่มต้น</span><strong>59 บาท</strong></div>
+              <button class="card-btn choose-service" type="button" data-game="Roblox" data-service="ฟาร์มเงิน">เลือกบริการ</button>
+            </div>
+          </article>
+
+          <article class="service-card searchable-service" data-game="Roblox" data-search="roblox ฟาร์มไอเทม item">
+            <div class="service-media"><img src="../assets/service-item.png" alt="บริการฟาร์มไอเทม"></div>
+            <div class="service-body">
+              <div class="service-meta"><span>Roblox</span><b>ITEM</b></div>
+              <h3>ฟาร์มไอเทม</h3>
+              <p>เลือกไอเทมเป้าหมายและจำนวนที่ต้องการภายในระบบจำลอง</p>
+              <div class="package-mini"><span>เริ่มต้น</span><strong>39 บาท</strong></div>
+              <button class="card-btn choose-service" type="button" data-game="Roblox" data-service="ฟาร์มไอเทม">เลือกบริการ</button>
+            </div>
+          </article>
+
+          <article class="service-card searchable-service" data-game="Roblox" data-search="roblox ภารกิจ mission quest">
+            <div class="service-media"><img src="../assets/service-mission.png" alt="บริการทำภารกิจ"></div>
+            <div class="service-body">
+              <div class="service-meta"><span>Roblox</span><b>MISSION</b></div>
+              <h3>ทำภารกิจ</h3>
+              <p>ระบุภารกิจหรือเป้าหมายที่ต้องการให้จำลองการดำเนินการ</p>
+              <div class="package-mini"><span>เริ่มต้น</span><strong>69 บาท</strong></div>
+              <button class="card-btn choose-service" type="button" data-game="Roblox" data-service="ทำภารกิจ">เลือกบริการ</button>
+            </div>
+          </article>
+
+          <article class="service-card searchable-service" data-game="Minecraft" data-search="minecraft ฟาร์มทรัพยากร resource">
+            <div class="service-media"><img src="../assets/service-item.png" alt="บริการฟาร์มทรัพยากร Minecraft"></div>
+            <div class="service-body">
+              <div class="service-meta"><span>Minecraft</span><b>RESOURCE</b></div>
+              <h3>ฟาร์มทรัพยากร</h3>
+              <p>เก็บทรัพยากรตัวอย่าง เช่น วัตถุดิบหรือของที่กำหนดในแพ็กเกจ</p>
+              <div class="package-mini"><span>เริ่มต้น</span><strong>49 บาท</strong></div>
+              <button class="card-btn choose-service" type="button" data-game="Minecraft" data-service="ฟาร์มทรัพยากร">เลือกบริการ</button>
+            </div>
+          </article>
+
+          <article class="service-card searchable-service" data-game="Minecraft" data-search="minecraft สร้าง build building">
+            <div class="service-media"><img src="../assets/game-minecraft.png" alt="บริการสร้างสิ่งปลูกสร้าง Minecraft"></div>
+            <div class="service-body">
+              <div class="service-meta"><span>Minecraft</span><b>BUILD</b></div>
+              <h3>สร้างสิ่งปลูกสร้าง</h3>
+              <p>เลือกแบบงานหรือรายละเอียดสิ่งที่ต้องการให้ทำในระบบจำลอง</p>
+              <div class="package-mini"><span>เริ่มต้น</span><strong>89 บาท</strong></div>
+              <button class="card-btn choose-service" type="button" data-game="Minecraft" data-service="สร้างสิ่งปลูกสร้าง">เลือกบริการ</button>
+            </div>
+          </article>
+
+          <article class="service-card searchable-service" data-game="Genshin Impact" data-search="genshin ฟาร์มไอเทม item วัตถุดิบ">
+            <div class="service-media"><img src="../assets/service-item.png" alt="บริการฟาร์มไอเทม Genshin Impact"></div>
+            <div class="service-body">
+              <div class="service-meta"><span>Genshin Impact</span><b>ITEM</b></div>
+              <h3>ฟาร์มไอเทมและวัตถุดิบ</h3>
+              <p>เลือกวัสดุหรือไอเทมเป้าหมายภายในแพ็กเกจจำลอง</p>
+              <div class="package-mini"><span>เริ่มต้น</span><strong>79 บาท</strong></div>
+              <button class="card-btn choose-service" type="button" data-game="Genshin Impact" data-service="ฟาร์มไอเทมและวัตถุดิบ">เลือกบริการ</button>
+            </div>
+          </article>
+
+          <article class="service-card searchable-service" data-game="Genshin Impact" data-search="genshin mission quest ภารกิจ">
+            <div class="service-media"><img src="../assets/service-mission.png" alt="บริการทำภารกิจ Genshin Impact"></div>
+            <div class="service-body">
+              <div class="service-meta"><span>Genshin Impact</span><b>MISSION</b></div>
+              <h3>ทำภารกิจ</h3>
+              <p>กำหนดภารกิจหรือเป้าหมายที่ต้องการในคำสั่งซื้อจำลอง</p>
+              <div class="package-mini"><span>เริ่มต้น</span><strong>69 บาท</strong></div>
+              <button class="card-btn choose-service" type="button" data-game="Genshin Impact" data-service="ทำภารกิจ">เลือกบริการ</button>
+            </div>
+          </article>
+
+          <article class="service-card searchable-service" data-game="Mobile Legends" data-search="mlbb mobile legends mission ภารกิจ">
+            <div class="service-media"><img src="../assets/service-mission.png" alt="บริการทำภารกิจ Mobile Legends"></div>
+            <div class="service-body">
+              <div class="service-meta"><span>Mobile Legends</span><b>MISSION</b></div>
+              <h3>ฟาร์มภารกิจ</h3>
+              <p>เลือกภารกิจและเงื่อนไขในแพ็กเกจจำลองก่อนส่งคำสั่งซื้อ</p>
+              <div class="package-mini"><span>เริ่มต้น</span><strong>59 บาท</strong></div>
+              <button class="card-btn choose-service" type="button" data-game="Mobile Legends" data-service="ฟาร์มภารกิจ">เลือกบริการ</button>
+            </div>
+          </article>
+
+          <article class="service-card searchable-service" data-game="Mobile Legends" data-search="mlbb mobile legends ไอเทม item">
+            <div class="service-media"><img src="../assets/service-item.png" alt="บริการไอเทม Mobile Legends"></div>
+            <div class="service-body">
+              <div class="service-meta"><span>Mobile Legends</span><b>ITEM</b></div>
+              <h3>บริการไอเทม</h3>
+              <p>เลือกไอเทมและจำนวนที่ต้องการจากแพ็กเกจจำลอง</p>
+              <div class="package-mini"><span>เริ่มต้น</span><strong>49 บาท</strong></div>
+              <button class="card-btn choose-service" type="button" data-game="Mobile Legends" data-service="บริการไอเทม">เลือกบริการ</button>
+            </div>
+          </article>
+        </div>
+        <p class="search-empty" id="serviceEmpty" hidden>ไม่พบบริการที่ตรงกับเงื่อนไขที่เลือกครับ</p>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">ORDER FLOW</span>
+            <h2>หลังจากเลือกบริการแล้ว</h2>
+            <p>ตัวเลือกของคุณจะถูกเก็บไว้ชั่วคราว แล้วเราจะใช้ข้อมูลนี้กับหน้า Order ในขั้นต่อไป</p>
+          </div>
+        </div>
+        <div class="flow-strip">
+          <div><span>01</span><strong>เกม</strong><small>เลือกจาก Games</small></div>
+          <i>→</i>
+          <div><span>02</span><strong>บริการ</strong><small>เลือกจากหน้านี้</small></div>
+          <i>→</i>
+          <div><span>03</span><strong>แพ็กเกจ</strong><small>กำหนดรายละเอียด</small></div>
+          <i>→</i>
+          <div><span>04</span><strong>Order</strong><small>ตรวจสอบก่อนยืนยัน</small></div>
+        </div>
+        <div class="education-note">
+          <div class="note-icon" aria-hidden="true">🎓</div>
+          <div>
+            <strong>หมายเหตุสำหรับโครงงาน</strong>
+            <p>ราคาและบริการบนเว็บไซต์เป็นข้อมูลตัวอย่างสำหรับการศึกษาเท่านั้น ไม่มีการรับเงินจริงและไม่มีการเชื่อมต่อบัญชีเกมจริง</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand-footer" href="../index.html"><span class="brand-mark" aria-hidden="true">🎮</span><span class="brand-text"><strong>GameFarm</strong><small>Service</small></span></a>
+          <p>เว็บไซต์โครงงานเพื่อการศึกษา จำลองระบบร้านบริการเกมตั้งแต่เลือกเกมจนถึงติดตามสถานะงาน</p>
+        </div>
+        <div><h3>เมนูหลัก</h3><a href="../index.html">หน้าแรก</a><a href="games.html">เกมทั้งหมด</a><a href="services.html">บริการ</a></div>
+        <div><h3>ระบบ</h3><a href="order.html">สั่งบริการ</a><a href="status.html">สถานะงาน</a><a href="host.html">Host Panel</a><a href="login.html">เข้าสู่ระบบ</a><a href="register.html">สมัครสมาชิก</a></div>
+        <div><h3>บัญชี</h3><a href="login.html">เข้าสู่ระบบ</a><a href="register.html">สมัครสมาชิก</a></div>
+        <div class="footer-card"><img src="../assets/promo-strip.png" alt="GameFarm Service"><div><strong>GameFarm Service</strong><span>Educational demo website</span></div></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GameFarm Service — Education Project</span><span>Mock service only • No real payments</span></div>
+    </div>
+  </footer>
+
+  <button class="floating-help" type="button" aria-label="คำแนะนำ" id="helpButton">?</button>
+  <script src="../js/main.js"></script>
+  <script src="../js/services.js"></script>
+</body>
+</html>
